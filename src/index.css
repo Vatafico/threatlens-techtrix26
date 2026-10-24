@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-navy-950 text-navy-100 font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-teal-500/30 text-white;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-navy-700/60 bg-navy-900/60 backdrop-blur-sm shadow-card;
+  }
+  .card-hover {
+    @apply transition-colors hover:border-navy-600/80 hover:bg-navy-800/50;
+  }
+  .input {
+    @apply w-full rounded-lg border border-navy-700 bg-navy-800/60 px-3 py-2 text-navy-100 placeholder-navy-400 outline-none transition focus:border-teal-500 focus:ring-1 focus:ring-teal-500/40;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-teal-500 text-navy-950 hover:bg-teal-400 active:bg-teal-600;
+  }
+  .btn-ghost {
+    @apply btn border border-navy-700 bg-transparent text-navy-100 hover:bg-navy-800/60;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #334e68;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #486581;
+  background-clip: padding-box;
+}
